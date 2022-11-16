@@ -21,6 +21,6 @@ class Owner extends CI_Controller
 	 */
 	public function index()
 	{
-		$this->load->view('index');
+		render2('owner/index');
 	}
 }

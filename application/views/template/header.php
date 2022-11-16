@@ -21,7 +21,7 @@
       <div class="header">
         <div class="logo logo-dark">
           <a href="index.html">
-            <img src="<?= base_url('assets/images/logo/logo.png'); ?>" alt="Logo">
+            <img src="<?= base_url('assets/images/logo/logo.png'); ?>" alt="Logo" style="width: 120px;">
             <img class="logo-fold" src="<?= base_url('assets/images/logo/logo-fold.png'); ?>" alt="Logo">
           </a>
         </div>

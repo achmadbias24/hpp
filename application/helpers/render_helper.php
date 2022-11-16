@@ -7,8 +7,8 @@ function render()
 function render2($link)
 {
   $a = get_instance();
-  $a->load->view('admin/template/header');
-  $a->load->view('admin/template/sidebar');
+  $a->load->view('template/header');
+  $a->load->view('template/sidebar');
   $a->load->view($link);
-  $a->load->view('admin/template/footer');
+  $a->load->view('template/footer');
 }

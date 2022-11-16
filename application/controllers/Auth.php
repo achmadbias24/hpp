@@ -14,16 +14,54 @@ class Auth extends CI_Controller
     $password = $this->input->post('password');
     $cek_data = $this->Auth_Model->getUser($username);
 
-    if (!empty($cek_data) && $cek_data[0]['NAMA_LEVEL'] == "admin") {
-      if ($cek_data[0]['PASSWORD'] == $password) {
-        //session pasien
-        $sessionPasien = array(
-          'NAMA_PASIEN' => $cek_data[0]['NAMA_USER']
-        );
-
-        $this->session->set_userdata($sessionPasien);
-        render2('admin/index');
+    if (!empty($cek_data)) {
+      if ($cek_data[0]['NAMA_LEVEL'] == "owner") {
+        if ($cek_data[0]['PASSWORD'] == $password) {
+          $sessionUser = array(
+            'NAMA_USER' => $cek_data[0]['NAMA_USER']
+          );
+          $this->session->set_userdata($sessionUser);
+          redirect('owner');
+        } else {
+          $this->session->set_flashdata('error', '
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                      <strong>Password Salah!
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>      
+          ');
+          redirect('Welcome');
+        }
+      } else if ($cek_data[0]['NAMA_LEVEL'] == "admin") {
+        if ($cek_data[0]['PASSWORD'] == $password) {
+          $sessionUser = array(
+            'NAMA_USER' => $cek_data[0]['NAMA_USER']
+          );
+          $this->session->set_userdata($sessionUser);
+          redirect('admin');
+        } else {
+          $this->session->set_flashdata('error', '
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                      <strong>Password Salah!
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>      
+          ');
+          redirect('Welcome');
+        }
       }
+    } else {
+      $this->session->set_flashdata('error', '
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Username Tidak Ditemukan!
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>      
+        ');
+      redirect('Welcome');
     }
   }
   public function logout()

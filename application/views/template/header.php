@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Enlink - Admin Dashboard Template</title>
+  <title>Dashboard - <?= $this->session->userdata('NAMA_LEVEL'); ?></title>
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="<?= base_url('assets/images/logo/favicon.png'); ?>">
+  <link rel="shortcut icon" href="<?= base_url('assets/images/logo/logo 1.png'); ?>">
 
   <!-- Core css -->
   <link href="<?= base_url('assets/css/app.min.css'); ?>" rel="stylesheet">

@@ -39,14 +39,14 @@
                       <label class="font-weight-semibold" for="userName">Username:</label>
                       <div class="input-affix">
                         <i class="prefix-icon anticon anticon-user"></i>
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="font-weight-semibold" for="password">Password:</label>
                       <div class="input-affix m-b-10">
                         <i class="prefix-icon anticon anticon-lock"></i>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                       </div>
                     </div>
                     <div class="form-group">

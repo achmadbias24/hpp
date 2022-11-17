@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Dashboard - <?= $this->session->userdata('NAMA_LEVEL'); ?></title>
+  <title>Penghitung HPP</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="<?= base_url('assets/images/logo/logo 1.png'); ?>">
@@ -12,6 +12,9 @@
   <!-- Core css -->
   <link href="<?= base_url('assets/css/app.min.css'); ?>" rel="stylesheet">
 
+  <!-- Js -->
+  <script type="text/javascript" src="<?= base_url('assets/js/jquery-3.0.0.js'); ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/js/jQuery-Mask-Plugin-master/dist/jquery.mask.js'); ?>"></script>
 </head>
 
 <body>

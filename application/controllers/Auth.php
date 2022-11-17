@@ -14,23 +14,15 @@ class Auth extends CI_Controller
     $password = $this->input->post('password');
     $cek_data = $this->Auth_Model->getUser($username);
 
+
     if (!empty($cek_data)) {
       if ($cek_data[0]['PASSWORD'] == $password) {
-        if ($cek_data[0]['NAMA_LEVEL'] == "owner") {
-          $sessionUser = array(
-            'NAMA_USER' => $cek_data[0]['NAMA_USER'],
-            'NAMA_LEVEL' => $cek_data[0]['NAMA_LEVEL']
-          );
-          $this->session->set_userdata($sessionUser);
-          redirect('owner');
-        } else if ($cek_data[0]['NAMA_LEVEL'] == "admin") {
-          $sessionUser = array(
-            'NAMA_USER' => $cek_data[0]['NAMA_USER'],
-            'NAMA_LEVEL' => $cek_data[0]['NAMA_LEVEL']
-          );
-          $this->session->set_userdata($sessionUser);
-          redirect('admin');
-        }
+        $sessionUser = array(
+          'NAMA_USER' => $cek_data[0]['NAMA_USER'],
+          'ID_USER' => $cek_data[0]['ID_USER']
+        );
+        $this->session->set_userdata($sessionUser);
+        redirect('barang');
       } else {
         $this->session->set_flashdata('error', '
         <div class="alert alert-danger alert-dismissible fade show" role="alert">

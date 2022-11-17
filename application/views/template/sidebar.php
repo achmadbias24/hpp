@@ -14,10 +14,10 @@
         </a>
         <ul class="dropdown-menu">
           <li>
-            <a href="index.html">Daftar Barang</a>
+            <a href="<?= site_url('barang') ?>">Daftar Barang</a>
           </li>
           <li>
-            <a href="index-crm.html">Hitung HPP</a>
+            <a href="<?= site_url('hpp') ?>">Hitung HPP</a>
           </li>
         </ul>
       </li>

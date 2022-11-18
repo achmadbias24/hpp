@@ -3,7 +3,7 @@ class Barang_Model extends CI_Model
 {
   public function getBarang()
   {
-    return $this->db->get('barang')->result_array();
+    return $this->db->get('v_barang')->result_array();
   }
   public function getSpesificBarang($id_barang)
   {
@@ -19,19 +19,5 @@ class Barang_Model extends CI_Model
       'ID_USER' => $this->session->ID_USER
     );
     $this->db->insert('barang', $data_barang);
-  }
-  public function getJumlah($id)
-  {
-    $this->db->select('JUMLAH_BARANG');
-    $this->db->where('ID_BARANG', $id);
-    return $this->db->get('barang')->result_array();
-  }
-  public function inputHpp($hpp, $id)
-  {
-    $data = array(
-      'HPP_BARANG' => $hpp
-    );
-    $this->db->where('ID_BARANG', $id);
-    $this->db->update('barang', $data);
   }
 }

@@ -1,8 +1,7 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     17/11/2022 11:51:37                          */
+/* Created on:     18/11/2022 10:16:04                          */
 /*==============================================================*/
-
 
 
 /*==============================================================*/
@@ -10,12 +9,10 @@
 /*==============================================================*/
 create table BARANG
 (
-   ID_BARANG            int not null AUTO_INCREMENT comment '',
-   ID_HPP               int  comment '',
+   ID_BARANG            int not null AUTO_INCREMENT  comment '',
    ID_USER              int  comment '',
    NAMA_BARANG          varchar(255)  comment '',
    JUMLAH_BARANG        int  comment '',
-   HPP_BARANG           int  comment '',
    primary key (ID_BARANG)
 );
 
@@ -25,6 +22,7 @@ create table BARANG
 create table HPP
 (
    ID_HPP               int not null AUTO_INCREMENT comment '',
+   ID_BARANG            int  comment '',
    KATUN                int  comment '',
    SUTRA                int  comment '',
    CAT                  int  comment '',
@@ -48,9 +46,9 @@ create table USER
    primary key (ID_USER)
 );
 
-alter table BARANG add constraint FK_BARANG_RELATIONS_HPP foreign key (ID_HPP)
-      references HPP (ID_HPP) on delete restrict on update restrict;
-
 alter table BARANG add constraint FK_BARANG_RELATIONS_USER foreign key (ID_USER)
       references USER (ID_USER) on delete restrict on update restrict;
+
+alter table HPP add constraint FK_HPP_RELATIONS_BARANG foreign key (ID_BARANG)
+      references BARANG (ID_BARANG) on delete restrict on update restrict;
 

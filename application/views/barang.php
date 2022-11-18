@@ -37,7 +37,12 @@
                     <td><?= $barang['ID_BARANG']; ?></td>
                     <td><?= $barang['NAMA_BARANG']; ?></td>
                     <td><?= $barang['JUMLAH_BARANG']; ?></td>
-                    <td><?= $barang['HPP_BARANG']; ?></td>
+                    <?php if ($barang['HPP'] == NULL) { ?>
+                      <td></td>
+                    <?php
+                    } else { ?>
+                      <td id="hpp"><?= $barang['HPP']; ?></td>
+                    <?php } ?>
                     <td><a href="<?= site_url('hpp/index/') . $barang['ID_BARANG']; ?>" class="btn btn-primary">Hitung HPP</a></td>
                   </tr>
                 <?php endforeach; ?>
@@ -48,6 +53,12 @@
       </div>
     </div>
     <!-- Content Wrapper END -->
+
+    <script type="text/javascript">
+      $('#hpp').mask('000.000.000.000', {
+        reverse: true
+      });
+    </script>
 
 
     <!-- Core Vendors JS -->

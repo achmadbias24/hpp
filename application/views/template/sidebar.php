@@ -16,9 +16,6 @@
           <li>
             <a href="<?= site_url('barang') ?>">Daftar Barang</a>
           </li>
-          <li>
-            <a href="<?= site_url('hpp') ?>">Hitung HPP</a>
-          </li>
         </ul>
       </li>
     </ul>

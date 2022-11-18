@@ -7,6 +7,7 @@ class Hpp extends CI_Controller
   {
     parent::__construct();
     $this->load->model('Barang_Model');
+    $this->load->model('HPP_Model');
   }
   public function index()
   {
@@ -15,17 +16,16 @@ class Hpp extends CI_Controller
   }
   public function hitung()
   {
-    $katun = $this->input->post('katun');
-    $sutra = $this->input->post('sutra');
-    $cat = $this->input->post('cat');
-    $pendukung = $this->input->post('pendukung');
-    $tenaga = $this->input->post('tenaga');
-    $mika = $this->input->post('mika');
-    $packaging = $this->input->post('packaging');
+    $katun = str_replace(".", "", $this->input->post('katun'));
+    $sutra = str_replace(".", "", $this->input->post('sutra'));
+    $cat = str_replace(".", "", $this->input->post('cat'));
+    $pendukung = str_replace(".", "", $this->input->post('pendukung'));
+    $tenaga = str_replace(".", "", $this->input->post('tenaga'));
+    $jemuran = str_replace(".", "", $this->input->post('jemuran'));
+    $mika = str_replace(".", "", $this->input->post('mika'));
+    $packaging = str_replace(".", "", $this->input->post('packaging'));
     $id = $this->input->post('id_barang');
-    $data['jumlah'] = $this->Barang_Model->getJumlah($id);
-    $hpp = ($katun + $sutra + $cat + $pendukung + $tenaga + $mika + $packaging) / $data['jumlah'];
-    $this->HPP_Model->inputHpp($id, $katun, $sutra, $pendukung, $tenaga, $mika, $packaging);
-    $this->Barang_Model->inputHpp($hpp, $id);
+    $this->HPP_Model->inputHpp($katun, $sutra, $cat, $pendukung, $tenaga, $jemuran, $mika, $packaging, $id);
+    redirect('barang');
   }
 }

@@ -1,7 +1,7 @@
 <!-- Footer START -->
 <footer class="footer">
   <div class="footer-content">
-    <p class="m-b-0">Copyright © 2022 Theme_Nate. All rights reserved.</p>
+    <p class="m-b-0">Copyright © 2022 Galuhsurabayan</p>
   </div>
 </footer>
 <!-- Footer END -->

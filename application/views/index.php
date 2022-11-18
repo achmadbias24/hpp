@@ -7,7 +7,7 @@
   <title>Aplikasi Penghitung HPP</title>
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="<?= base_url('assets/images/logo/logo 1.png') ?>">
+  <link rel="shortcut icon" href="<?= base_url('assets/images/logo/logo 2.png') ?>">
 
   <!-- page css -->
 
@@ -59,7 +59,7 @@
               </div>
             </div>
             <div class="offset-md-1 col-md-6 d-none d-md-block">
-              <img class="img-fluid" src="<?= base_url('assets/images/others/login-2.png') ?>" alt="">
+              <img class="img-fluid" src="<?= base_url('assets/images/logo/logo 1.png') ?>" alt="">
             </div>
           </div>
         </div>

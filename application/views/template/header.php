@@ -7,7 +7,7 @@
   <title>Penghitung HPP</title>
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="<?= base_url('assets/images/logo/logo 1.png'); ?>">
+  <link rel="shortcut icon" href="<?= base_url('assets/images/logo/logo 2.png'); ?>">
 
   <!-- Core css -->
   <link href="<?= base_url('assets/css/app.min.css'); ?>" rel="stylesheet">
@@ -25,21 +25,15 @@
         <div class="logo logo-dark">
           <a href="index.html">
             <img src="<?= base_url('assets/images/logo/logo.png'); ?>" alt="Logo" style="width: 120px;">
-            <img class="logo-fold" src="<?= base_url('assets/images/logo/logo-fold.png'); ?>" alt="Logo">
-          </a>
-        </div>
-        <div class="logo logo-white">
-          <a href="index.html">
-            <img src="<?= base_url('assets/images/logo/logo-white.png'); ?>" alt="Logo">
-            <img class="logo-fold" src="<?= base_url('assets/images/logo/logo-fold-white.png'); ?>" alt="Logo">
+            <img class="logo-fold " src="<?= base_url('assets/images/logo/logo.png'); ?>" alt="Logo" style="width: 50px;">
           </a>
         </div>
         <div class="nav-wrap">
           <ul class="nav-left">
-            <li class="desktop-toggle">
+            <!-- <li class="desktop-toggle">
               <a href="javascript:void(0);">
                 <i class="anticon"></i>
-              </a>
+              </a> -->
             </li>
             <li class="mobile-toggle">
               <a href="javascript:void(0);">

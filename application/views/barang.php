@@ -39,11 +39,12 @@
                     <td><?= $barang['JUMLAH_BARANG']; ?></td>
                     <?php if ($barang['HPP'] == NULL) { ?>
                       <td></td>
+                      <td><a href="<?= site_url('hpp/index/') . $barang['ID_BARANG']; ?>" class="btn btn-warning" style="color: black;">Hitung HPP</a></td>
                     <?php
                     } else { ?>
                       <td id="hpp"><?= $barang['HPP']; ?></td>
+                      <td><a href="<?= site_url('Hpp/detail/') . $barang['ID_BARANG']; ?>" class="btn btn-primary">Detail HPP</a></td>
                     <?php } ?>
-                    <td><a href="<?= site_url('hpp/index/') . $barang['ID_BARANG']; ?>" class="btn btn-primary">Hitung HPP</a></td>
                   </tr>
                 <?php endforeach; ?>
                 </tfoot>

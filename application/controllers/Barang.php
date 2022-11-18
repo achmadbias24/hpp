@@ -13,18 +13,22 @@ class Barang extends CI_Controller
     if ($this->session->NAMA_USER) {
       $data['brg'] = $this->Barang_Model->getBarang();
       render2('barang', $data);
-    }
+    } else redirect('welcome');
   }
   public function tambah()
   {
-    $data = "";
-    render2('tambah_barang', $data);
+    if ($this->session->NAMA_USER) {
+      $data = "";
+      render2('tambah_barang', $data);
+    } else redirect('welcome');
   }
   public function addBarang()
   {
-    $nama = $this->input->post('nama');
-    $jumlah = $this->input->post('jumlah');
-    $this->Barang_Model->tambahBarang($nama, $jumlah);
-    redirect('barang');
+    if ($this->session->NAMA_USER) {
+      $nama = $this->input->post('nama');
+      $jumlah = $this->input->post('jumlah');
+      $this->Barang_Model->tambahBarang($nama, $jumlah);
+      redirect('barang');
+    } else redirect('welcome');
   }
 }
